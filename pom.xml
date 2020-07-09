@@ -17,6 +17,7 @@
     <modules>
         <module>reference-module</module>
         <module>mirror-module</module>
+        <module>common</module>
     </modules>
 
     <properties>

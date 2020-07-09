@@ -11,6 +11,14 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>DATA POINTS :: REFERENCE MODULE</name>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.khtm.test</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
         <plugins>

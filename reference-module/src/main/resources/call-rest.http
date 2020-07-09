@@ -1,0 +1,8 @@
+POST http://localhost:8081/add-user
+Content-Type: application/json
+
+{
+  "name": "alireza",
+  "lastName": "Khatami Doost",
+  "phoneNumber": "+989194018087"
+}

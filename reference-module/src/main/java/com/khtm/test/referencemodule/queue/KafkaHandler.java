@@ -13,8 +13,12 @@ import org.springframework.util.concurrent.ListenableFutureCallback;
 @Service
 public class KafkaHandler {
 
+    private final KafkaTemplate<String, Object> kafkaTemplate;
+
     @Autowired
-    private KafkaTemplate<String, Object> kafkaTemplate;
+    public KafkaHandler(KafkaTemplate<String, Object> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
+    }
 
     public void sendMessage(String topic, String message){
         ListenableFuture<SendResult<String, Object>> feature = kafkaTemplate.send(topic, message);
