@@ -26,4 +26,6 @@ public class UserAuditing {
     private Long userId;
     @Column(name = "STATE")
     private UserState state;
+    @Column(name = "USER")
+    private String user;
 }

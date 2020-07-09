@@ -25,7 +25,7 @@ public class KafkaConfiguration {
     @Bean
     public Map<String, Object> getKafkaProperties(){
         Map<String, Object> config = new HashMap<>();
-        config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost");
+        config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "http://localhost:9092");
         config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         return config;
@@ -36,7 +36,7 @@ public class KafkaConfiguration {
         return new DefaultKafkaProducerFactory<String, Object>(getKafkaProperties());
     }
 
-    @Bean
+    @Bean("kafkaTemplate")
     public KafkaTemplate<String, Object> getKafkaTemplate(){
         return new KafkaTemplate<String, Object>(getKafkaProducerFactory());
     }
