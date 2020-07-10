@@ -52,7 +52,7 @@ public class UserAuditingListener {
         BeanFactory beanFactory = context;
         KafkaTemplate kafkaTemplate = (KafkaTemplate) beanFactory.getBean("kafkaTemplate");
         KafkaHandler handler = new KafkaHandler(kafkaTemplate);
-        handler.sendMessage("user", "alireza");
+        handler.sendMessage("user", new GsonBuilder().create().toJson(user, User.class));
 
         System.out.println(">>>>>>>>>>>>>>> DONE");
 //        UserAuditing userAuditing = new UserAuditing(0l, user.getId(), UserState.INSERT);
